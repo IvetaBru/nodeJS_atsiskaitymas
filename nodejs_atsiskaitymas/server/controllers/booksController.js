@@ -81,4 +81,26 @@ const getBooks = async (req, res) => {
     }
 };
 
-export { getBooks };
+const getSpecBook = async (req, res) => {
+    const client = await MongoClient.connect(DB_CONNECTION_STRING);
+    try{
+        const { _id } = req.params;
+    
+        const book = await client
+        .db('BackEnd')
+        .collection('books')
+        .findOne({ _id: _id });
+
+        if(!book){
+            return res.status(404).send({ error: `Book with id ${_id} not found.`});
+        }
+        res.json(book);
+    }catch(err){
+        console.error(err);
+        res.status(500).send({ error: err, message: `Something went wrong with server, please try again later.` });
+    }finally{
+        await client.close();
+    }
+};
+
+export { getBooks, getSpecBook };
