@@ -5,7 +5,11 @@ import BooksContext from "../components/contexts/BooksContext";
 import BookCard from '../components/UI/molecules/BookCard';
 
 const StyledSection = styled.section`
-    
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 `
 
 const AllBooks = () => {
