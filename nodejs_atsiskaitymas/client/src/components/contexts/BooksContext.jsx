@@ -1,4 +1,4 @@
-import { createContext, useReducer, useRef } from 'react';
+import { createContext, useReducer, useRef, useState, useEffect } from 'react';
 
 const reducer = (state, action) => {
     switch(action.type){
@@ -13,11 +13,12 @@ const BooksContext = createContext();
 const BooksProvider = ({ children }) => {
 
     const [books, dispatch] = useReducer(reducer, []);
+    const [loading, setLoading] = useState(true);
 
     const sort = useRef([]);
     const filter = useRef('');
     const currentPage = useRef(1);
-    const pageSize = useRef(4);
+    const pageSize = useRef(10);
     
     const changeSort = (e) => {
         sort.current = `${e.target.value}`;
@@ -49,7 +50,7 @@ const BooksProvider = ({ children }) => {
           .then(data => {
             dispatch({
               type: 'setData',
-              data: data
+              data: data.books ?? []
             });
           })
           .finally(() => {
@@ -57,10 +58,15 @@ const BooksProvider = ({ children }) => {
           });
     }
 
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return(
         <BooksContext.Provider
             value={{
                 books,
+                loading,
                 changeSort,
                 changeFilter,
                 changePage,
