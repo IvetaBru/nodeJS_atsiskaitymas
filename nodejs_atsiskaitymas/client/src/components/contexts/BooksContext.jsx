@@ -18,7 +18,7 @@ const BooksProvider = ({ children }) => {
     const sort = useRef([]);
     const filter = useRef('');
     const currentPage = useRef(1);
-    const pageSize = useRef(10);
+    const pageSize = useRef(100);
     
     const changeSort = (e) => {
         sort.current = `${e.target.value}`;
@@ -28,7 +28,6 @@ const BooksProvider = ({ children }) => {
     const changeFilter = (newFilter) => {
         filter.current = newFilter;
         currentPage.current = 1;
-        getFilteredDataAmount();
         fetchData();
     }
 

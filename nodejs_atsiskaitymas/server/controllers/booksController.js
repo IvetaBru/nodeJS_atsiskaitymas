@@ -45,9 +45,9 @@ const dynamicQuery = (reqQuery) => {
             }else{
                 const $operator = '$' + operator;
                 if(!settings.filter[field]){
-                    settings.filter[field] = { [$operator]: value };
+                    settings.filter[field] = { [$operator]: Number(value) };
                 }else{
-                    settings.filter[field][$operator] = value;
+                    settings.filter[field][$operator] = Number(value);
                 }
             }
         }

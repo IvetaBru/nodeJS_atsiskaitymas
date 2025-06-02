@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import BooksContext from "../components/contexts/BooksContext";
 import BookCard from '../components/UI/molecules/BookCard';
+import BooksFilter from '../components/UI/molecules/BooksFilter';
 
 const StyledSection = styled.section`
     div{
@@ -18,6 +19,8 @@ const AllBooks = () => {
 
     return ( 
         <StyledSection>
+            <h2>Our Books</h2>
+            <BooksFilter />
             <div>
                 {
                     loading ? <p> Data is loading... </p> :
