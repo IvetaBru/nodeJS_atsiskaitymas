@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 
+import booksRouter from './routes/booksRouter.js';
+
 const PORT = process.env.PORT || 5501;
 const corsOptions = {
     origin: "http://localhost:5173"
@@ -16,3 +18,5 @@ app.use(cors(corsOptions));
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`);
 });
+
+app.use('/books', booksRouter);
