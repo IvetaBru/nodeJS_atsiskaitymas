@@ -71,6 +71,7 @@ const BookCard = ({ data }) => {
                 alt={data.title} 
             />
             <h3>{data.title}</h3>
+            <span>{data.rating}/5</span>
             <span>{data.author}</span>
             <span>{data.genres.join(' | ')}</span>
             <span>{data.publishDate}</span>
