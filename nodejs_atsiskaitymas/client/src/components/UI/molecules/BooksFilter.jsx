@@ -1,7 +1,46 @@
 import { useContext } from "react";
 import { useFormik } from "formik";
+import styled from 'styled-components';
 
 import BooksContext from "../../contexts/BooksContext";
+
+const StyledForm = styled.form`
+    background-color: #AFBFC0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 20%;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    >div{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        color: #312b21;
+        >input{
+            border-radius: 5px;
+            border: none;
+        }
+    }
+    .button{
+        width: 30%;
+        align-self: center;
+        background-color: #AFBFC0;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+        background-color: #C2D3CD;
+        }
+    }
+`
 
 const BooksFilter = () => {
 
@@ -28,7 +67,7 @@ const BooksFilter = () => {
         }
     })
     return ( 
-        <form onSubmit={formik.handleSubmit}>
+        <StyledForm onSubmit={formik.handleSubmit}>
         <div>
             <label>Years from:</label>
             <input
@@ -49,17 +88,17 @@ const BooksFilter = () => {
         </div>
         <div>
             <label>
+            Show only available books
+            </label>
             <input
                 type="checkbox"
                 name="filter_available"
                 checked={formik.values.filter_available}
                 onChange={formik.handleChange}
             />
-            Show only available books
-            </label>
         </div>
-      <input type="submit" value="Filter" />
-    </form>
+      <input type="submit" value="Filter" className="button"/>
+    </StyledForm>
   );
 }
  
