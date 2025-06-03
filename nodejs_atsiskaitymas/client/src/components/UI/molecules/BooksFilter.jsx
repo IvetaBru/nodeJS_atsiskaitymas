@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import BooksContext from "../../contexts/BooksContext";
 
 const StyledForm = styled.form`
-    background-color: #AFBFC0;
+    background: linear-gradient(135deg, #f0f4f8, #C2D3CD);
     padding: 20px;
     border-radius: 10px;
     width: 20%;

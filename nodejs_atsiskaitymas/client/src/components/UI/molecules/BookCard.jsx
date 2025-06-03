@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const StyledCard = styled.div`
   height: 270px;
-  background: #C2D3CD;
+  background: linear-gradient(135deg, #C2D3CD, #f0f4f8);
   color: #312b21;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0,0,0,0.1);
