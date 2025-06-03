@@ -38,7 +38,7 @@ const AllBooks = () => {
 
     return ( 
         <StyledSection>
-            <h2>Our Books</h2>
+            <h2>All Books</h2>
             <BooksFilter />
             <BooksSort />
             <div className='books'>

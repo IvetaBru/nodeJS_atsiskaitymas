@@ -101,7 +101,7 @@ const Home = () => {
     return ( 
         <StyledSection>
             <div className='intro'>
-                <h2>Welcome to our bookstore – a place where stories come alive.</h2>
+                <h2>Welcome to our library - a place where stories come alive</h2>
                 <p>Whether you're looking for timeless classics, thrilling mysteries, heartwarming novels, or inspiring non-fiction, we’ve got something for every reader. Browse our carefully curated collection, discover new favorites, and enjoy the magic of reading.</p>
                 <p>Step inside, turn the page, and let your next adventure begin.</p>
             </div>
