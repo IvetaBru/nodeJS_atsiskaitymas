@@ -12,11 +12,7 @@ const StyledCard = styled.div`
   padding: 10px;
   font-size: 12px;
   margin: 0;
-  &:hover{
-    background-color: #AFBFC0;
-    transition: background-color 0.3s ease;
-  }
-
+  
   >div{
     display: flex;
     flex-direction: column;
