@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 import BooksContext from "../components/contexts/BooksContext";
 import BookCard from '../components/UI/molecules/BookCard';
@@ -20,11 +21,20 @@ const StyledSection = styled.section`
         gap: 25px;
         padding: 50px 0;
     }
+    .up{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border: none;
+    }
 `
 
 const AllBooks = () => {
 
     const { books, loading } = useContext(BooksContext);
+    const scroll = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
 
     return ( 
         <StyledSection>
@@ -42,7 +52,8 @@ const AllBooks = () => {
                        /> 
                     )
                 }
-            </div>    
+            </div>   
+            <button onClick={scroll} className='up'><ArrowUpwardIcon/></button>
         </StyledSection>
     );
 }
