@@ -6,8 +6,6 @@ const dynamicQuery = (reqQuery) => {
     const settings = {
         filter: {},
         sort: {},
-        skip: 0,
-        limit: 20
     }
     for (const key in reqQuery) {
         const [action, field, operator] = key.split('_');
@@ -16,14 +14,6 @@ const dynamicQuery = (reqQuery) => {
         if(action === 'sort') {
             settings.sort[field] = Number(value);
             settings.sort._id = 1;
-        }
-
-        else if(action === 'skip'){
-            settings.skip = Number(value);
-        }
-
-        else if(action === 'limit') {
-            settings.limit = Number(value);
         }
 
         else if(action === 'filter'){
@@ -68,8 +58,6 @@ const getBooks = async (req, res) => {
         const books = await collection
             .find(settings.filter)
             .sort(settings.sort)
-            .skip(settings.skip)
-            .limit(settings.limit)
             .toArray();
 
         res.send ({ totalAmount, books });    

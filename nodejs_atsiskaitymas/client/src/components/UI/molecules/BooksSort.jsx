@@ -7,7 +7,7 @@ const StyledSort = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20%;
+    width: 25%;
     color: #312b21;
     font-size: 14px;
     >select{

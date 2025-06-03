@@ -8,7 +8,7 @@ const StyledForm = styled.form`
     background: linear-gradient(135deg, #f0f4f8, #C2D3CD);
     padding: 20px;
     border-radius: 10px;
-    width: 20%;
+    width: 25%;
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
 
     display: flex;

@@ -17,7 +17,7 @@ const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     >img {
-      width: 100%;
+      min-width: 100%;
       height: 270px;
       object-fit: cover;
       border-radius: 10px;
@@ -31,6 +31,7 @@ const StyledCard = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
+    min-width: 250px;
     >h3 {
       font-size: 16px;
       font-weight: 900;

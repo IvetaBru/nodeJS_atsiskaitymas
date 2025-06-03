@@ -17,8 +17,6 @@ const BooksProvider = ({ children }) => {
 
     const sort = useRef([]);
     const filter = useRef('');
-    const currentPage = useRef(1);
-    const pageSize = useRef(100);
     
     const changeSort = (e) => {
         sort.current = `${e.target.value}`;
@@ -27,24 +25,12 @@ const BooksProvider = ({ children }) => {
 
     const changeFilter = (newFilter) => {
         filter.current = newFilter;
-        currentPage.current = 1;
-        fetchData();
-    }
-
-    const changePageSize = (size) => {
-        pageSize.current = size;
-        currentPage.current = 1;
-        fetchData();
-    }
-
-    const changePage = (newPage) => {
-        currentPage.current = newPage;
         fetchData();
     }
 
     const fetchData = () => {
         setLoading(true);
-        fetch(`http://localhost:5500/books?skip=${(currentPage.current - 1) * pageSize.current}&limit=${pageSize.current}&${sort.current}&${filter.current}`)
+        fetch(`http://localhost:5500/books?&${sort.current}&${filter.current}`)
           .then(res => res.json())
           .then(data => {
             dispatch({
@@ -68,8 +54,6 @@ const BooksProvider = ({ children }) => {
                 loading,
                 changeSort,
                 changeFilter,
-                changePage,
-                changePageSize
             }}
         >
             { children }
