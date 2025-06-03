@@ -18,7 +18,7 @@ const StyledSection = styled.section`
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 25px;
-        padding-top: 50px;
+        padding: 50px 0;
     }
 `
 

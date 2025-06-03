@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router';
 import styled from 'styled-components';
+import Footer from './Footer';
 
 const StyledHeader = styled.header`
     height: 80px;
@@ -33,6 +34,18 @@ const StyledHeader = styled.header`
             }
         }
     }
+    .work{
+        >a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            color: #312b21;
+            &:hover{
+                text-decoration: underline 2px #C2D3CD;
+                text-underline-offset: 6px;
+            }
+        }
+    }
 `
 
 const Header = () => {
@@ -47,8 +60,8 @@ const Header = () => {
                     <li><NavLink to='/books'>Books</NavLink></li>
                 </ul>
             </nav>
-            <div>
-                <span>Working hours</span>
+            <div className='work'>
+                <a href="#footer">Our working hours 🕘</a>
             </div>
         </StyledHeader>
      );
