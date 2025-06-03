@@ -2,7 +2,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #d6cfcf;
+  background-color: #eaeceb;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -10,6 +10,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }

@@ -7,10 +7,11 @@ import BooksFilter from '../components/UI/molecules/BooksFilter';
 import BooksSort from '../components/UI/molecules/BooksSort';
 
 const StyledSection = styled.section`
-    div{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+    >.books{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding-top: 50px;
     }
 `
 
@@ -23,7 +24,7 @@ const AllBooks = () => {
             <h2>Our Books</h2>
             <BooksFilter />
             <BooksSort />
-            <div>
+            <div className='books'>
                 {
                     loading ? <p> Data is loading... </p> :
                     !books.length ? <p> No books in the library yet... </p> :
