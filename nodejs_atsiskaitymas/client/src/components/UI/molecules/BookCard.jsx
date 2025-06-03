@@ -12,6 +12,10 @@ const StyledCard = styled.div`
   padding: 10px;
   font-size: 12px;
   margin: 0;
+  &:hover{
+    background-color: #AFBFC0;
+    transition: background-color 0.3s ease;
+  }
 
   >div{
     display: flex;
@@ -41,7 +45,7 @@ const StyledCard = styled.div`
     }
   }
   button {
-    background-color: #C2D3CD;
+    background-color: #AFBFC0;
     color: #312b21;
     border: none;
     border-radius: 5px;
@@ -52,7 +56,7 @@ const StyledCard = styled.div`
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #AFBFC0;
+      background-color: #C2D3CD;
     }
   }
 `

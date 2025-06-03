@@ -7,6 +7,13 @@ import BooksFilter from '../components/UI/molecules/BooksFilter';
 import BooksSort from '../components/UI/molecules/BooksSort';
 
 const StyledSection = styled.section`
+    >h2{
+        color: #312b21;
+        font-weight: 900;
+        font-size: 30px;
+        text-decoration: underline 5px #C2D3CD;
+        text-underline-offset: 10px;
+    }
     >.books{
         display: grid;
         grid-template-columns: repeat(3, 1fr);

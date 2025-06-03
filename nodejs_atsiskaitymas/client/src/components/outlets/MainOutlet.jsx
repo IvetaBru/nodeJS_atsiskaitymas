@@ -5,7 +5,7 @@ import Header from "../UI/organisms/Header";
 import Footer from "../UI/organisms/Footer";
 
 const StyledMain = styled.section`
-    padding: 50px 100px;
+    padding: 20px 100px;
 `
 
 const MainOutlet = () => {
