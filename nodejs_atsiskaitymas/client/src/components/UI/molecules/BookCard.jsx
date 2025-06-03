@@ -63,11 +63,11 @@ const StyledCard = styled.div`
 
 const BookCard = ({ data }) => {
 
-    const shortDescription = (text, wordLimit = 15) => {
-    const words = text.split(' ');
-    if (words.length <= wordLimit) return text;
-    return words.slice(0, wordLimit).join(' ') + '...';
-    };
+  const shortDescription = (text, wordLimit = 15) => {
+  const words = text.split(' ');
+  if (words.length <= wordLimit) return text;
+  return words.slice(0, wordLimit).join(' ') + '...';
+  };
 
     return ( 
         <StyledCard>
